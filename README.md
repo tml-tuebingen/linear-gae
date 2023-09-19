@@ -32,10 +32,6 @@ echo ALL DONE!
 - existing files contain experiments from paper
 
 
-## Results
-- outputs of all experiments I ran are in the results folder saved as .txt files and .csv files
-
-
 ## Figures
 - all figures from the paper can be automatically created via the figures.py 
 - it will create .tex output but you can adapt the ending to generate .pdf or .png files
