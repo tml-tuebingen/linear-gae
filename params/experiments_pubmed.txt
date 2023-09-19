@@ -1,0 +1,8 @@
+-epochs=200 -hidden1=32 -hidden2=16 -decoder=innerproduct -layers=2 -dataset=pubmed -runs=10 -sigma=0 -activation=relu -regularizer=kl -task=edge
+-epochs=200 -hidden1=32 -hidden2=16 -decoder=innerproduct -layers=1 -dataset=pubmed -runs=10 -sigma=0 -activation=linear -regularizer=ls -task=edge
+-epochs=200 -hidden1=32 -hidden2=4 -decoder=innerproduct -layers=2 -dataset=pubmed -runs=10 -sigma=0 -activation=relu -regularizer=kl -task=node
+-epochs=200 -hidden1=32 -hidden2=4 -decoder=innerproduct -layers=1 -dataset=pubmed -runs=10 -sigma=0 -activation=linear -regularizer=ls -task=node
+-epochs=200 -hidden1=32 -hidden2=16 -decoder=innerproduct -layers=2 -dataset=pubmed -runs=10 -sigma=0 -activation=relu -regularizer=kl -task=edge --featureless
+-epochs=200 -hidden1=32 -hidden2=16 -decoder=innerproduct -layers=1 -dataset=pubmed -runs=10 -sigma=0 -activation=linear -regularizer=ls -task=edge --featureless
+-epochs=200 -hidden1=32 -hidden2=4 -decoder=innerproduct -layers=2 -dataset=pubmed -runs=10 -sigma=0 -activation=relu -regularizer=kl -task=node --featureless
+-epochs=200 -hidden1=32 -hidden2=4 -decoder=innerproduct -layers=1 -dataset=pubmed -runs=10 -sigma=0 -activation=linear -regularizer=ls -task=node --featureless

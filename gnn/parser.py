@@ -1,0 +1,31 @@
+
+def initialise_parser(parser, plotting=False):
+    if plotting:
+        parser.add_argument('-name', help='Folder with data to compare.', type=str, required=True)
+        parser.add_argument('--plotting', dest='plotting', help='Wether to plot the results.', action='store_true', default=False)
+        parser.add_argument('-output_directory', help='Folder to save to data and plots to.', type=str, default='figs')
+
+    else:
+        parser.add_argument('-decoder', help='Which GNN-model to use', type=str, default='innerproduct')
+        parser.add_argument('-epochs', help='Number of epochs to train.', type=int, default=200)
+        parser.add_argument('-num_nodes', help='Number of nodes.', type=int, default=300)
+        parser.add_argument('-num_features', help='Number of features.', type=int, default=2)
+        parser.add_argument('-hidden1', help='Number of units in hidden layer 1.', type=int, default=32)
+        parser.add_argument('-hidden2', help='Number of units in hidden layer 2.', type=int, default=16)
+        parser.add_argument('-dataset', help='The dataset to load.', type=str, required=True)
+        parser.add_argument('-activation', help='Activation function to use in first layer.', type=str, default='relu')
+        parser.add_argument('-sigma', help='Use variational interpretation (1).', type=int, default=1)
+        parser.add_argument('-layers', help='Number of layers of the network, (0, 1 or 2)', type=int, default=2)
+        parser.add_argument('-runs', help='Number of random trials.', type=int, default=10)
+        parser.add_argument('-alignment', help='number of aligned dimensions.', type=int, default=None)
+        parser.add_argument('-regularizer', help='Which regularizer to use.', type=str, default='kl')
+        parser.add_argument('--featureless', dest='featureless', help='Whether to use features (False) or not (True).', action='store_true', default=False)
+        parser.add_argument('--square_support', dest='support', help='Wether to square the support matrix', action='store_true', default=False)
+        parser.add_argument('--learning_rate', help='Initial learning rate.', type=float, default=0.01)
+        parser.add_argument('--weight_decay', help='Weight for L2 loss on embedding matrix.', type=float, default=0)
+        parser.add_argument('--dropout', help='Dropout rate (1 - keep probability).', type=float, default=0)
+        parser.add_argument('--plot', dest='plot', help='Boolean for plotting results.', action='store_true', default=False)
+        parser.add_argument('--experiment_name', help='Name of the experiment - for saving.', type=str, default=None)
+        parser.add_argument('--every_k_images', help='Use every kth image for gif.', type=int, default=0)
+        parser.add_argument('--initialize', dest='init', help='Wether to manually initialize weights using features.', action='store_true', default=False)
+        parser.add_argument('-task', help='The task to use for evaluation, edge ore node level.', type=str, default='node')
